@@ -1,0 +1,17 @@
+# Build folders
+bin
+obj
+build
+
+# Executables
+.exe
+
+# Logs
+.log
+
+# VS Code
+.vscode
+
+# CodeBlocks generated files
+.layout
+.depend
