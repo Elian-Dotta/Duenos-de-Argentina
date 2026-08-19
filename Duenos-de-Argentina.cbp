@@ -7,17 +7,35 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Duenos-de-Argentina" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option output="build/bin/Debug/Duenos-de-Argentina" prefix_auto="1" extension_auto="1" />
+				<Option object_output="build/obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="lib/SDL2/SDL2-2.32.8/x86_64-w64-mingw32/include" />
+					<Add directory="lib/SDL2/SDL2-2.32.8/x86_64-w64-mingw32/include/SDL2" />
+					<Add directory="lib/SDL2/SDL2_ttf-2.24.0/x86_64-w64-mingw32/include" />
+					<Add directory="lib/SDL2/SDL2_mixer-2.8.1/x86_64-w64-mingw32/include" />
+					<Add directory="lib/SDL2/SDL2_image-2.8.8/x86_64-w64-mingw32/include" />
 				</Compiler>
+				<Linker>
+					<Add option="-lmingw32" />
+					<Add option="-lSDL2main" />
+					<Add option="-lSDL2" />
+					<Add option="-lSDL2_mixer" />
+					<Add option="-lSDL2_ttf" />
+					<Add option="-lSDL2_image" />
+					<Add library="SDL2" />
+					<Add directory="lib/SDL2/SDL2-2.32.8/x86_64-w64-mingw32/lib" />
+					<Add directory="lib/SDL2/SDL2_ttf-2.24.0/x86_64-w64-mingw32/lib" />
+					<Add directory="lib/SDL2/SDL2_mixer-2.8.1/x86_64-w64-mingw32/lib" />
+					<Add directory="lib/SDL2/SDL2_image-2.8.8/x86_64-w64-mingw32/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Duenos-de-Argentina" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+				<Option output="build/bin/Release/Duenos-de-Argentina" prefix_auto="1" extension_auto="1" />
+				<Option object_output="build/obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -31,7 +49,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
