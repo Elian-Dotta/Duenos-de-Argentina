@@ -7,4 +7,4 @@ game statistics, local multiplayer and singleplayer mode.
 
 ## Current Status
 
-In active development
+Milestone 0 - In active development 
