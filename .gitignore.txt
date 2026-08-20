@@ -1,5 +1,7 @@
-# Build folders
-obj/
+# Ignore obj folders at all levels
+**/obj/
+*.o
+*.obj
 
 # Logs
 *.log
