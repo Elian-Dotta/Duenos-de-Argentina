@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <SDL2/sdl.h>
 
+#include "../include/debug/debug.h"
+
 int main(int argc, char *argv[])
 {
-    printf("Duenos de Argentina\n");
-
+    debugMenu();
+    
     return 0;
 }
