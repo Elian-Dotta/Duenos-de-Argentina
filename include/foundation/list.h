@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "error.h"
+
 typedef struct sNode 
 {
     void *data;
@@ -13,9 +15,9 @@ typedef struct sNode
 
 typedef tNode *tList;
 
-typedef (*CompareFunc)(const void *, const void *);
-typedef (*ActionFunc)(void *, void *);
-typedef (*ShowFunc)(const void *);
+typedef int (*CompareFunc)(const void *, const void *);
+typedef void (*ActionFunc)(void *, void *);
+typedef void (*ShowFunc)(const void *);
 
 tError initList(tList *list);
 tError insertHead(tList *list, const void *data, unsigned dataSize);

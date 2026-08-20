@@ -25,12 +25,12 @@ tError insertHead(tList *list, const void *data, unsigned dataSize)
 
     new = (tNode*)malloc(sizeof(tNode));
 
-    if(new == NULL || 
+    if(new == NULL ||
       (new->data = malloc(dataSize)) == NULL)
     {
         free(new);
         return ERROR_MEMORY_ALLOCATION;
-    }    
+    }
 
     memcpy(new->data, data, dataSize);
     new->dataSize = dataSize;
@@ -51,12 +51,12 @@ tError insertTail(tList *list, const void *data, unsigned dataSize)
 
     new = (tNode*)malloc(sizeof(tNode));
 
-    if(new == NULL || 
+    if(new == NULL ||
       (new->data = malloc(dataSize)) == NULL)
     {
         free(new);
         return ERROR_MEMORY_ALLOCATION;
-    }   
+    }
 
     while(*list)
     {
@@ -93,12 +93,12 @@ tError insertOrdered(tList *list, const void *data, unsigned dataSize, CompareFu
 
     new = (tNode*)malloc(sizeof(tNode));
 
-    if(new == NULL || 
+    if(new == NULL ||
     (new->data = malloc(dataSize)) == NULL)
     {
         free(new);
         return ERROR_MEMORY_ALLOCATION;
-    } 
+    }
 
     memcpy(new->data, data, dataSize);
     new->dataSize = dataSize;
@@ -116,6 +116,8 @@ tError getHead(tList *list, void *data, unsigned dataSize)
     }
 
     memcpy(data, (*list)->data, minimum(dataSize, (*list)->dataSize));
+
+    return OK;
 }
 
 tError getTail(tList *list, void *data, unsigned dataSize)
@@ -131,6 +133,8 @@ tError getTail(tList *list, void *data, unsigned dataSize)
     }
 
     memcpy(data, (*list)->data, minimum(dataSize, (*list)->dataSize));
+
+    return OK;
 }
 
 tError deleteElementByKey(tList *list, const void *data, unsigned dataSize, CompareFunc compare)
@@ -173,7 +177,7 @@ tError mapList(tList *list, ActionFunc action, void *context)
     {
         action((*list)->data, context);
 
-        list = &(*list)->data;
+        list = &(*list)->next;
     }
 
     return OK;
@@ -190,7 +194,7 @@ tError showList(tList *list, ShowFunc show)
     {
         show((*list)->data);
 
-        list = &(*list)->data;
+        list = &(*list)->next;
     }
 
     return OK;

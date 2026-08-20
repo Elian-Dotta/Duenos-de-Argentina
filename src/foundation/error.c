@@ -11,7 +11,10 @@ char* getErrorMessage(tError error)
         case ERROR_DUPLICATED_ENTRY:    return "Error: Duplicated.";
         case ERROR_NOT_FOUND:           return "Error: Not found.";
         case ERROR_UNKNOWN:             return "Error: We don't know what happened here.";
+        default:
+            return "Error: We don't know what happened here.";
     }
+
+
 }
 
-    
