@@ -1,0 +1,17 @@
+#ifndef ERROR_H_INCLUDED
+#define ERROR_H_INCLUDED
+
+typedef enum
+{
+    OK = 0,
+    ERROR_INVALID_ARGUMENT,
+    ERROR_MEMORY_ALLOCATION,
+    ERROR_FILE_NOT_FOUND,
+    ERROR_DUPLICATED_ENTRY,
+    ERROR_NOT_FOUND,
+    ERROR_UNKNOWN
+}tError;
+
+char* getErrorMessage(tError error);
+
+#endif // ERROR_H_INCLUDED
