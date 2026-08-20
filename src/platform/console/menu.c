@@ -17,7 +17,7 @@ char menuC(const char* msg, const char *opt, int err, const char *errMsg)
 
         printf("%s", msg);
 
-        scanf(" %c", op);
+        scanf(" %c", &op);
 
     }while(!strchr(msg, op));
 
@@ -41,9 +41,9 @@ int menuN(const char* msg, int amountOptions, int err, const char *errMsg)
 
         printf("%s", msg);
 
-        scanf("%d", op);
+        scanf("%d", &op);
 
     }while(op < 0 || op > amountOptions);
 
-    return op;    
+    return op;
 }
